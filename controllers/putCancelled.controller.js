@@ -29,9 +29,8 @@ function putCancelled(req, res){
 								let turno = detVenta[0].turno;
 								let sucursal = detVenta[0].sucursal;
 								let estacion = detVenta[0].estacion;
-								let foliocorte = detVenta[0].foliocorte;
 
-								db.updateCancelacion(folioV, cajero, turno, sucursal, estacion, foliocorte);
+								db.updateCancelacion(folioV, cajero, turno, sucursal, estacion);
 								
 							}
 
