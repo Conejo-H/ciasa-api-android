@@ -118,7 +118,7 @@ function pasarVentaACancelacion(folioV, producto, cantidad, precio, costo, impor
 	var ahora = today.toISOString();
 	var fecha = ahora.substring(0,10);
 	return new Promise((resolve,reject) => {
-		connection.query( `INSERT INTO cancelaciones (id, folio, producto, cantidad, precio, costo, fecha, zona_horaria, hora, motivo, cajero, turno, importe, sucursal, estacion, foliocorte) VALUES (NULL, '${folioV}', '${producto}', '${cantidad}', '${precio}', '${costo}', '${fecha}', '${zonaHoraria}' , '${ahora}', '', '', '', '${importe}', '', '', ''); `,
+		connection.query( `INSERT INTO cancelaciones (id, folio, producto, cantidad, precio, costo, fecha, zona_horaria, hora, motivo, cajero, turno, importe, sucursal, estacion) VALUES (NULL, '${folioV}', '${producto}', '${cantidad}', '${precio}', '${costo}', '${fecha}', '${zonaHoraria}' , '${ahora}', '', '', '', '${importe}', '', ''); `,
 		(err, result) => {
 		if (err) throw err;
 		});
