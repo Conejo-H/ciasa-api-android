@@ -147,16 +147,15 @@ function pasarVentaACancelacion(folioV, producto, cantidad, precio, costo, impor
 	//});
 }
 
-function updateCancelacion(folioV, cajero, turno, sucursal, estacion, foliocorte){
+function updateCancelacion(folioV, cajero, turno, sucursal, estacion){
 	console.log("Folio: " + folioV);
 	console.log("Cajero: " + cajero);
 	console.log("Turno: " + turno);
 	console.log("Sucursal:" + sucursal);
 	console.log("Estación: " + estacion);
-	console.log("Foliocorte: " + foliocorte);
 	return new Promise((resolve,reject) => {
 		
-		let querty = connection.query( ` UPDATE cancelaciones SET cajero ='${cajero}', turno='${turno}', sucursal='${sucursal}',estacion = '${estacion}', foliocorte ='${foliocorte}' WHERE folio = '${folioV}'; `,
+		let querty = connection.query( ` UPDATE cancelaciones SET cajero ='${cajero}', turno='${turno}', sucursal='${sucursal}',estacion = '${estacion}' WHERE folio = '${folioV}'; `,
 	  	(err, result) => {
 	    	if (err) throw err;
 	  	});
