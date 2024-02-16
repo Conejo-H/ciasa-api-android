@@ -10,7 +10,6 @@ function putCancelled(req, res){
 					return db.obtenerDatosVenta(req.params.folio).then((venta)=> {
 						try{
 							db.putCancelled(detVenta);
-							console.log(venta);
 							let ventaJSON = Object.entries(JSON.parse(JSON.stringify(venta)));
 							var count = Object.keys(ventaJSON).length;
 							console.log("Total entries: " + count);
